@@ -1,6 +1,6 @@
 #!/bin/sh
 CHANGELOGSH_NAME="ChangelogSH"
-CHANGELOGSH_VERSION=0.0.5
+CHANGELOGSH_VERSION=0.0.6
 CHANGELOGSH_AUTHOR="Hu Liupeng <liupeng.hu@gmail.com>"
 
 # configuration
@@ -48,8 +48,11 @@ cat << EOF
 ${CHANGELOGSH_NAME} ${CHANGELOGSH_VERSION}
 Copyright (C) 2012, ${CHANGELOGSH_AUTHOR}
 
-Usage: ${CHANGELOGSH_NAME} version_id version_files
+Usage: ${CHANGELOGSH_NAME} [GNU style options] version_id version_files
 	version_id must be fit with format "^[0-9]\+\.[0-9]\+\.[0-9]\+$", eg: 2.6.32
+GNU long options:
+    --version show version info
+    --help    show this help message
 
 Some variables can be set to change configurations of this ${CHANGELOGSH_NAME}:
 	variable           description
@@ -115,9 +118,22 @@ check_file_exist () {
 	return 0
 }
 
-if [ $# -lt 2 ]; then
+if [ $# -lt 1 ]; then
 	usage
 	exit 0
+fi
+
+case "$1" in
+    --version)
+        echo ${CHANGELOGSH_NAME} ${CHANGELOGSH_VERSION};
+        shift;;
+    --help)
+        usage;
+        shift;;
+esac
+
+if [ $# -lt 2 ]; then
+    exit 0
 fi
 
 V_ID=$1

@@ -1,6 +1,6 @@
 #!/bin/sh
 CHANGELOGSH_NAME="ChangelogSH"
-CHANGELOGSH_VERSION=0.0.4
+CHANGELOGSH_VERSION=0.0.5
 CHANGELOGSH_AUTHOR="Hu Liupeng <liupeng.hu@gmail.com>"
 
 # configuration
@@ -164,12 +164,12 @@ time2=`stat -c %Z ${CHANGELOG_EDITFILE}`
 
 #echo "${time1} -> ${time2}"
 if [ ${time2} -le ${time1} ];then
-	echo "changelog has not been comfirmed."
+	echo "changelog has not been confirmed."
 	echo "abort"
 	exit 3
 fi
 
-echo "changelog has been comfirmed."
+echo "changelog has been confirmed."
 echo "commit"
 
 if [ -f ${CHANGELOG_FILE} ];then

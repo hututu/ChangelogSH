@@ -1,3 +1,15 @@
+version     : 0.0.5
+date        : 2012/08/29 18:23:36
+md5sum      : 
+    0958c05283a7e4c7ccd7dd2a46029a8b ChangelogSH
+file size   :
+                                3921 ChangelogSH
+bugfix      :
+	1 fixup a spelling mistake
+new feature :
+platform    : x86,x64
+notes       :
+--------------------------------------------------------------------------------
 version     : 0.0.4
 date        : 2012/08/29 17:48:48
 md5sum      : 

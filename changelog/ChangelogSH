@@ -1,5 +1,6 @@
 #!/bin/sh
-CHANGELOGSH_VERSION=0.0.1
+CHANGELOGSH_NAME="ChangelogSH"
+CHANGELOGSH_VERSION=0.0.2
 CHANGELOGSH_AUTHOR="Hu Liupeng <liupeng.hu@gmail.com>"
 
 # configuration
@@ -44,12 +45,13 @@ fi
 # usage
 usage() {
 cat << EOF
-ChangelogSH ${CHANGELOGSH_VERSION}
+${CHANGELOGSH_NAME} ${CHANGELOGSH_VERSION}
 Copyright (C) 2012, ${CHANGELOGSH_AUTHOR}
 
-Usage: changelog.sh version_id version_files
+Usage: ${CHANGELOGSH_NAME} version_id version_files
+	version_id must be fit with format "^[0-9]\+\.[0-9]\+\.[0-9]\+$", eg: 2.6.32
 
-Some variables can be set to change configurations of this ChangelogSH:
+Some variables can be set to change configurations of this ${CHANGELOGSH_NAME}:
 	variable           description
 	--------------------------------------------------------------------------------
 	CHANGELOG_FILE     output changelog file name, 'changelog.txt' as default.
@@ -65,10 +67,10 @@ Some variables can be set to change configurations of this ChangelogSH:
 	N_LABLE            "notes       :"
 	SEPARATOR          80 '-' chars
 
-ChangelogSH is a efficiency tool to update changelog file.
+${CHANGELOGSH_NAME} is a efficiency tool to update changelog file.
 
 Examples:
-	CHANGELOG_EDITOR="vi" ./changelog.sh 1.0.5 changelog.sh
+	CHANGELOG_EDITOR="vi" ./${CHANGELOGSH_NAME} 0.0.0 ${CHANGELOGSH_NAME}
 EOF
 	return 0
 }

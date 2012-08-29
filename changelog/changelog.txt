@@ -1,0 +1,25 @@
+version     : 0.0.2
+date        : 2012/08/29 15:59:56
+md5sum      : 
+    9e7de9fc7cc9a9f363e87262bbd3af3a ChangelogSH
+file size   :
+                                3591 ChangelogSH
+bugfix      :
+new feature :
+	1 change tool name to ChangelogSH
+	2 add description for version_id
+platform    : x86,x64
+notes       :
+--------------------------------------------------------------------------------
+version     : 0.0.1
+date        : 2012/08/29 15:54:10
+md5sum      : 
+    23421c0e4a202e60cc4abcfdaeaa82b2 changelog.sh
+file size   :
+                                3437 changelog.sh
+bugfix      :
+new feature :
+platform    : x86,x64
+notes       :
+	first version
+--------------------------------------------------------------------------------

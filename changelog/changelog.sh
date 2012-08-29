@@ -21,7 +21,7 @@ is_cmd_valid() {
 
 if ! is_cmd_valid "date" "awk" "stat" "md5sum" "vi"; then 
 	echo "abort"
-	exit 0
+	exit 1
 fi
 
 #template

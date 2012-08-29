@@ -1,3 +1,14 @@
+version     : 0.0.3
+date        : 2012/08/29 16:22:42
+md5sum      : 
+    926f7ddf677a83e07256223c750e8b91 ChangelogSH
+file size   :
+                                3597 ChangelogSH
+bugfix      : get file name error when get file size in EN environment
+new feature :
+platform    : x86,x64
+notes       :
+--------------------------------------------------------------------------------
 version     : 0.0.2
 date        : 2012/08/29 15:59:56
 md5sum      : 

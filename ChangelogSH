@@ -1,6 +1,6 @@
 #!/bin/sh
 CHANGELOGSH_NAME="ChangelogSH"
-CHANGELOGSH_VERSION=0.0.2
+CHANGELOGSH_VERSION=0.0.3
 CHANGELOGSH_AUTHOR="Hu Liupeng <liupeng.hu@gmail.com>"
 
 # configuration
@@ -124,7 +124,7 @@ fi
 
 DATE=`date +"%Y/%m/%d %H:%M:%S"`
 MD5SUM=`md5sum ${V_FILE_LIST} | awk '{printf "%36s %s\n",$1,$2}'`
-SIZE=`ls -l ${V_FILE_LIST} | awk '{printf "%36s %s\n",$5,$8}'`
+SIZE=`LANG= ls -l ${V_FILE_LIST} | awk '{printf "%36s %s\n",$5,$9}'`
 
 cat << EOF > ${CHANGELOG_EDITFILE}
 ${V_LABLE} ${V_ID}

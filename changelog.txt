@@ -1,3 +1,15 @@
+version     : 0.0.4
+date        : 2012/08/29 17:48:48
+md5sum      : 
+    1c05b909771530484024593e35d75167 ChangelogSH
+file size   :
+                                3921 ChangelogSH
+bugfix      :
+	1 if 'version_files' is not valid, abort
+new feature :
+platform    :
+notes       :
+--------------------------------------------------------------------------------
 version     : 0.0.3
 date        : 2012/08/29 16:22:42
 md5sum      : 

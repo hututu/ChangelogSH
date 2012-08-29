@@ -1,6 +1,6 @@
 #!/bin/sh
 CHANGELOGSH_NAME="ChangelogSH"
-CHANGELOGSH_VERSION=0.0.3
+CHANGELOGSH_VERSION=0.0.4
 CHANGELOGSH_AUTHOR="Hu Liupeng <liupeng.hu@gmail.com>"
 
 # configuration
@@ -84,18 +84,14 @@ is_cmd_valid() {
 		# 1: not valid
 		valid=`$i --version 1>/dev/null 2>&1 && echo 0 || echo 1`
 		if [ ${valid} -eq 1 ];then
-			echo "$i not found"
+			echo "cmd $i not found"
 			return ${valid}
 		fi
 	done
 	return ${valid}
 }
 
-if [ $# -lt 2 ]; then
-	usage
-	exit 0
-fi
-
+# check version id format, must be "^[0-9]\+\.[0-9]\+\.[0-9]\+$", eg: 2.6.3
 check_version_id () {
 	valid=1
 	if [ $# -eq 1 ];then
@@ -104,6 +100,25 @@ check_version_id () {
 	fi
 	return ${valid}
 }
+
+# check file list
+check_file_exist () {
+	for i in "$@"
+	do
+		# 0: valid
+		# 1: not valid
+		if [ ! -f $i ]; then
+			echo "file $i not found"
+			return 1
+		fi
+	done
+	return 0
+}
+
+if [ $# -lt 2 ]; then
+	usage
+	exit 0
+fi
 
 V_ID=$1
 
@@ -115,6 +130,10 @@ fi
 
 shift
 V_FILE_LIST="$@"
+if ! check_file_exist ${V_FILE_LIST}; then
+	echo "abort"
+	exit 5
+fi
 
 # check gnu tools we need
 if ! is_cmd_valid "date" "awk" "stat" "md5sum" "${CHANGELOG_EDITOR}"; then 

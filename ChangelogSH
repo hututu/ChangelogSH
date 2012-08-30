@@ -2,6 +2,8 @@
 CHANGELOGSH_NAME="ChangelogSH"
 CHANGELOGSH_VERSION=0.0.6
 CHANGELOGSH_AUTHOR="Hu Liupeng <liupeng.hu@gmail.com>"
+CHANGELOGSH_COPYRIGHT="Copyright (C) 2012, ${CHANGELOGSH_AUTHOR}"
+CHANGELOGSH_LICENSE="This is free software; see the source for copying conditions."
 
 # configuration
 if [ -z ${CHANGELOG_FILE} ]; then
@@ -61,7 +63,7 @@ show_key() {
 usage() {
 cat << EOF
 ${CHANGELOGSH_NAME} ${CHANGELOGSH_VERSION}
-Copyright (C) 2012, ${CHANGELOGSH_AUTHOR}
+${CHANGELOGSH_COPYRIGHT}
 
 Usage: ${CHANGELOGSH_NAME} [GNU style options] version_id version_files
    version_id must be fit with format "^[0-9]\+\.[0-9]\+\.[0-9]\+$", eg: 2.6.32
@@ -143,7 +145,11 @@ fi
 
 case "$1" in
     --version)
-        echo ${CHANGELOGSH_NAME} ${CHANGELOGSH_VERSION};
+cat << EOF
+${CHANGELOGSH_NAME} ${CHANGELOGSH_VERSION}
+${CHANGELOGSH_COPYRIGHT}
+${CHANGELOGSH_LICENSE}
+EOF
         shift;;
     --help)
         usage;

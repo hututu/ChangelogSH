@@ -51,8 +51,8 @@ Copyright (C) 2012, ${CHANGELOGSH_AUTHOR}
 Usage: ${CHANGELOGSH_NAME} [GNU style options] version_id version_files
 	version_id must be fit with format "^[0-9]\+\.[0-9]\+\.[0-9]\+$", eg: 2.6.32
 GNU long options:
-    --version show version info
-    --help    show this help message
+	--version show version info
+	--help    show this help message
 
 Some variables can be set to change configurations of this ${CHANGELOGSH_NAME}:
 	variable           description
@@ -73,7 +73,7 @@ Some variables can be set to change configurations of this ${CHANGELOGSH_NAME}:
 ${CHANGELOGSH_NAME} is a efficiency tool to update changelog file.
 
 Examples:
-	CHANGELOG_EDITOR="vi" ./${CHANGELOGSH_NAME} 0.0.0 ${CHANGELOGSH_NAME}
+	CHANGELOG_EDITOR="vi" ./${CHANGELOGSH_NAME} ${CHANGELOGSH_VERSION} ${CHANGELOGSH_NAME}
 EOF
 	return 0
 }

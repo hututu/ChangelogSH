@@ -1,3 +1,18 @@
+version     : 0.0.6
+date        : 2012/09/14 00:01:30
+md5sum      : 
+    6b8ad6fe10898055d154842983048a20 ChangelogSH
+file size   :
+                                4686 ChangelogSH
+bugfix      :
+new feature :
+	1 add two GNU long options: --version --help
+	2 调整GNU long options的缩进
+	3 修改help中Example中的版本号为ChangelogSH当前版本号
+	4 配置变量以下划线绿色字体高亮
+platform    : x86,x64 (bash)
+notes       :
+--------------------------------------------------------------------------------
 version     : 0.0.5
 date        : 2012/08/29 18:23:36
 md5sum      : 

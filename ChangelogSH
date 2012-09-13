@@ -13,6 +13,9 @@ fi
 if [ -z ${CHANGELOG_EDITFILE} ]; then
 	CHANGELOG_EDITFILE="CHANGELOG_EDITMSG"
 fi
+if [ -z ${CHANGELOG_COLOR} ];then
+    CHANGELOG_COLOR="on"
+fi
 # template
 if [ -z ${V_LABLE} ]; then
 V_LABLE="version     :"
@@ -42,6 +45,18 @@ if [ -z ${SEPARATOR} ]; then
 SEPARATOR="--------------------------------------------------------------------------------"
 fi
 
+if [ ${CHANGELOG_COLOR} == "on" ];then
+	# underline, blue
+	KEY_COLOR_S="\033[04m\033[42m"
+	KEY_COLOR_E="\033[0m"
+fi
+
+# show key
+show_key() {
+	echo -e "   ${KEY_COLOR_S}$1${KEY_COLOR_E}:"
+	echo -e "        $2"
+	return 0
+}
 # usage
 usage() {
 cat << EOF
@@ -49,31 +64,34 @@ ${CHANGELOGSH_NAME} ${CHANGELOGSH_VERSION}
 Copyright (C) 2012, ${CHANGELOGSH_AUTHOR}
 
 Usage: ${CHANGELOGSH_NAME} [GNU style options] version_id version_files
-	version_id must be fit with format "^[0-9]\+\.[0-9]\+\.[0-9]\+$", eg: 2.6.32
+   version_id must be fit with format "^[0-9]\+\.[0-9]\+\.[0-9]\+$", eg: 2.6.32
 GNU long options:
-	--version show version info
-	--help    show this help message
+   --version show version info
+   --help    show this help message
 
 Some variables can be set to change configurations of this ${CHANGELOGSH_NAME}:
-	variable           description
-	--------------------------------------------------------------------------------
-	CHANGELOG_FILE     output changelog file name, 'changelog.txt' as default.
-	CHANGELOG_EDITOR   changelog file editor, 'vi' as default.
-	CHANGELOG_EDITFILE temp file used to edit changelog, 'CHANGELOG_EDITMSG' as default
-	V_LABLE            "version     :"
-	D_LABLE            "date        :"
-	M_LABLE            "md5sum      :"
-	S_LABLE            "file size   :"
-	B_LABLE            "bugfix      :"
-	F_LABLE            "new feature :"
-	P_LABLE            "platform    :"
-	N_LABLE            "notes       :"
-	SEPARATOR          80 '-' chars
+   variable           description
+   --------------------------------------------------------------------------------
+EOF
+show_key "CHANGELOG_FILE" "output changelog file name, 'changelog.txt' as default."
+show_key "CHANGELOG_EDITOR" "changelog file editor, 'vi' as default."
+show_key "CHANGELOG_EDITFILE" "temp file used to edit changelog, 'CHANGELOG_EDITMSG' as default"
+show_key "CHANGELOG_COLOR" "key words display colors, 'on' as default"
+show_key "V_LABLE" "\"version     :\""
+show_key "D_LABLE" "\"date        :\""
+show_key "M_LABLE" "\"md5sum      :\""
+show_key "S_LABLE" "\"file size   :\""
+show_key "B_LABLE" "\"bugfix      :\""
+show_key "F_LABLE" "\"new feature :\""
+show_key "P_LABLE" "\"platform    :\""
+show_key "N_LABLE" "\"notes       :\""
+show_key "SEPARATOR" "80 '-' chars"
+
+cat << EOF
 
 ${CHANGELOGSH_NAME} is a efficiency tool to update changelog file.
-
 Examples:
-	CHANGELOG_EDITOR="vi" ./${CHANGELOGSH_NAME} ${CHANGELOGSH_VERSION} ${CHANGELOGSH_NAME}
+   CHANGELOG_COLOR="off" CHANGELOG_EDITOR="vi" ./${CHANGELOGSH_NAME} ${CHANGELOGSH_VERSION} ${CHANGELOGSH_NAME}
 EOF
 	return 0
 }

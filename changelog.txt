@@ -1,3 +1,15 @@
+version     : 0.0.6rc1
+date        : 2013/06/03 15:01:58
+md5sum      : 
+    4808f4f6a64615e87b2436e335e9da47 ChangelogSH
+file size   :
+                                4910 ChangelogSH
+bugfix      :
+new feature :
+	1 No fixed version id is required now. So 'a.b.c_rcN' is valid.
+platform    :
+notes       :
+--------------------------------------------------------------------------------
 version     : 0.0.6
 date        : 2012/09/14 00:01:30
 md5sum      : 

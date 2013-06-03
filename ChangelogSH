@@ -1,8 +1,8 @@
 #!/bin/sh
 CHANGELOGSH_NAME="ChangelogSH"
-CHANGELOGSH_VERSION=0.0.6
+CHANGELOGSH_VERSION=0.0.6rc1
 CHANGELOGSH_AUTHOR="Hu Liupeng <liupeng.hu@gmail.com>"
-CHANGELOGSH_COPYRIGHT="Copyright (C) 2012, ${CHANGELOGSH_AUTHOR}"
+CHANGELOGSH_COPYRIGHT="Copyright (C) 2012-2013, ${CHANGELOGSH_AUTHOR}"
 CHANGELOGSH_LICENSE="This is free software; see the source for copying conditions."
 
 # configuration
@@ -162,11 +162,12 @@ fi
 
 V_ID=$1
 
-if ! check_version_id ${V_ID}; then
-	echo "version_id not valid."
-	echo "abort"
-	exit 1
-fi
+# no fix version id required
+#if ! check_version_id ${V_ID}; then
+#	echo "version_id not valid."
+#	echo "abort"
+#	exit 1
+#fi
 
 shift
 V_FILE_LIST="$@"

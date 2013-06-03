@@ -1,6 +1,6 @@
 #!/bin/sh
 CHANGELOGSH_NAME="ChangelogSH"
-CHANGELOGSH_VERSION=0.0.6rc1
+CHANGELOGSH_VERSION=0.0.6rc2
 CHANGELOGSH_AUTHOR="Hu Liupeng <liupeng.hu@gmail.com>"
 CHANGELOGSH_COPYRIGHT="Copyright (C) 2012-2013, ${CHANGELOGSH_AUTHOR}"
 CHANGELOGSH_LICENSE="This is free software; see the source for copying conditions."
@@ -66,7 +66,7 @@ ${CHANGELOGSH_NAME} ${CHANGELOGSH_VERSION}
 ${CHANGELOGSH_COPYRIGHT}
 
 Usage: ${CHANGELOGSH_NAME} [GNU style options] version_id version_files
-   version_id must be fit with format "^[0-9]\+\.[0-9]\+\.[0-9]\+$", eg: 2.6.32
+   version_id can be any non-empty string.
 GNU long options:
    --version show version info
    --help    show this help message
